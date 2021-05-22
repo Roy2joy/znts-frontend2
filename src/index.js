@@ -29,8 +29,11 @@ import FullReport from "./patient/fullReport"
 import Addreport from "./patient/AddReport"
 
 
-global.getBack="http://localhost:3001/";
-global.getFront="http://localhost:3000/";
+// global.getBack="http://localhost:3001/";
+// global.getFront="http://localhost:3000/";
+
+global.getBack="https://znts-backend.herokuapp.com/";
+global.getFront="https://znts-herokuapp.com/";
 
 
 const history = createBrowserHistory({basename : `${process.env.PUBLIC_URL}`});
