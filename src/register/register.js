@@ -38,7 +38,7 @@ const options = [
 
   const Register = () => {
     console.log('Registration function called');
-    Axios.post(global.getBack+"posts/makeRegisteration", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/makeRegisteration", {
       Name : nameReg,   
        Age : ageReg,
        Gender : genderReg, 
@@ -60,7 +60,7 @@ const options = [
 
           //console.log(id);
 
-          window.location.href = global.getFront+`login?id=${id}`;
+          window.location.href = `https://znts.herokuapp.com/login?id=${id}`;
       //return render(<FormPage />);
 
         }

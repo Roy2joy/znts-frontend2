@@ -30,7 +30,7 @@ const [nameDoctor, setNameDoctor] = useState([]);
    //console.log(props.item.DeptID);
    useEffect(() => {
 
-    fetch(global.getBack+`get/doctorOfDept?id=${IdFromURL}`)
+    fetch(`https://znts-backend.herokuapp.com/get/doctorOfDept?id=${IdFromURL}`)
     .then(Response => Response.json()) 
     .then(json=> { 
      setNameDoctor(json);
@@ -40,7 +40,7 @@ const [nameDoctor, setNameDoctor] = useState([]);
 
   const Doctor_Info = (Id) => {
     var id;
-    window.location.href = global.getFront+`doctorProfileP?id=${Id}`;
+    window.location.href = `https://znts.herokuapp.com/doctorProfileP?id=${Id}`;
     }
 
  
@@ -63,7 +63,7 @@ const [nameDoctor, setNameDoctor] = useState([]);
 
             <span className="deptListContainerItems2">Specialists: {item.Speciality}</span>
             
-           <MDBBtn href = {global.getFront+`doctorProfileP?id=${item.EmpId}&pid=${PIdFromURL}`}>View Profile</MDBBtn>
+           <MDBBtn href = {`https://znts.herokuapp.com/doctorProfileP?id=${item.EmpId}&pid=${PIdFromURL}`}>View Profile</MDBBtn>
           </div>
         ))
       }

@@ -48,7 +48,7 @@ console.log(DateFromURL);
      
 useEffect(() => {
   
-    Axios.post(global.getBack+"posts/requestTime", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/requestTime", {
       ID: IdFromURL,
      Date: DateFromURL,
     })
@@ -98,7 +98,7 @@ useEffect(() => {
      })
 
 
-    Axios.post(global.getBack+"posts/confirmAppointment", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/confirmAppointment", {
       DocID: IdFromURL,
       ID : PIdFromURL,
      Date: DateFromURL,
@@ -144,14 +144,14 @@ useEffect(() => {
      
 
         const Pay = () => {
-            Axios.post(global.getBack+"posts/makePAyment", {
+            Axios.post("https://znts-backend.herokuapp.com/posts/makePAyment", {
           AppID: IDAppointment,
           Amount:feeAppointment
         })
           .then((Response) => {
                  //setFeeAppointment(Response.data.FeeBalance);
                  var id="Appointment Booked."
-                 window.location.href = global.getFront+`login?id=${id}`;
+                 window.location.href = `https://znts.herokuapp.com/login?id=${id}`;
 
          })
         }

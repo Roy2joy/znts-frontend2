@@ -35,7 +35,7 @@ const RIdFromURL = params.get('rid');
   const login = () => {
     console.log('Login function called');
     console.log('Login function called');
-    Axios.post(global.getBack+"posts/loginDoctor", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/loginDoctor", {
       ID: loginID,
       Password: loginPass,
     })
@@ -45,7 +45,7 @@ const RIdFromURL = params.get('rid');
           setloginStatus(Response.data.msg);
         }
         if(Response.data.msg == "Password matched") {
-         window.location.href = global.getFront+`doctorAppointment?id=${loginID}`;
+         window.location.href = `https://znts.herokuapp.com/doctorAppointment?id=${loginID}`;
         }
         else {
           setloginStatus(Response.data.msg);

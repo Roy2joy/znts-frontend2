@@ -59,7 +59,7 @@ function Day(day) {
 
    //console.log(props.item.DeptID);
   // console.log('Login function called');
-   Axios.post(global.getBack+"posts/detailOfDoctor", {
+   Axios.post("https://znts-backend.herokuapp.com/posts/detailOfDoctor", {
      ID: IdFromURL,
      //Password: loginPass,
    })

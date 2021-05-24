@@ -20,7 +20,7 @@ function DepartPage (){
   const [nameDep, setNameDep] = useState([]);
   useEffect(() => {
 
-    fetch(global.getBack+"get/findDoctor")
+    fetch("https://znts-backend.herokuapp.com/get/findDoctor")
     .then(Response => Response.json()) 
     .then(json=> { 
      setNameDep(json);
@@ -31,7 +31,7 @@ function DepartPage (){
 
  const Doctor_Info = (Id) => {
   var id;
-  window.location.href = global.getFront+`doctor?id=${Id}`;
+  window.location.href = `https://znts.herokuapp.com/doctor?id=${Id}`;
   }
     
 

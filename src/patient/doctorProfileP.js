@@ -13,7 +13,7 @@ import DepartPageP from "./finddocP"
 import AppointmentDate from "./Appointment"
 import { render } from "@testing-library/react";
 const history = createBrowserHistory({basename : `${process.env.PUBLIC_URL}`});
-
+global.temp='https://znts-backend.herokuapp.com'
 
 function DoctorViewP(props){
 
@@ -69,7 +69,7 @@ for(var i=0;i<7;i++) {
 
     useEffect(() =>{
 
-      Axios.post(global.getBack+"posts/detailOfDoctor", {
+      Axios.post("https://znts-backend.herokuapp.com/posts/detailOfDoctor", {
         ID: IdFromURL,
         //Password: loginPass,
       })
@@ -133,7 +133,7 @@ for(var i=0;i<7;i++) {
                : {Day(ActiveDay[0])} , {Day(ActiveDay[2])}
             </div>
             <div style={{marginLeft:"22px",marginTop:"40px",display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-around"}}>
-            <MDBBtn href = {global.getFront+`Appointment?id=${IdFromURL}&pid=${PIdFromURL}`}>Make Appointment</MDBBtn>
+            <MDBBtn href = {`https://znts.herokuapp.com/Appointment?id=${IdFromURL}&pid=${PIdFromURL}`}>Make Appointment</MDBBtn>
             </div>
           </div>
             

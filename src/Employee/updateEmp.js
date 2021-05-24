@@ -33,7 +33,7 @@ const IdFromURL = params.get('id');
 
   const login = () => {
     console.log('Login function called');
-    Axios.post(global.getBack+"posts/loginAdmin", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/loginAdmin", {
       ID: loginID,
       Password: loginPass,
     })
@@ -45,7 +45,7 @@ const IdFromURL = params.get('id');
         if(Response.data.msg == "Password matched") {
         // window.location.href = "http://localhost:3000/DepartInfo";
 
-        window.location.href = global.getFront+`EmpPage?id=${loginID}`
+        window.location.href = `https://znts.herokuapp.com/EmpPage?id=${loginID}`
       }
         else {
           setloginStatus(Response.data.msg);
@@ -74,7 +74,7 @@ return (
           <MDBInput label="Type your ID" icon="envelope"  onChange={(e) => {setloginID(e.target.value)}} />
         </div>
         <div className="text-center">
-          <MDBBtn href = {global.getFront+`EmpData?id=${loginID}`}>Update</MDBBtn>
+          <MDBBtn href = {`https://znts.herokuapp.com/EmpData?id=${loginID}`}>Update</MDBBtn>
         </div>
         <br />
         <br />
@@ -82,7 +82,7 @@ return (
         <br />
         <br />
         <div className="text-center">
-          <MDBBtn href = {global.getFront+`EmpData?id=${loginID}`}>Register</MDBBtn>
+          <MDBBtn href = {`https://znts.herokuapp.com/EmpData?id=${loginID}`}>Register</MDBBtn>
         </div>
         <h3 style={{color: 'red' , textAlign:'center'}}>{loginStatus}</h3>
         <h3 style={{color: 'Green' , textAlign:'center'}}>{IdFromURL}</h3>

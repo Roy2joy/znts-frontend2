@@ -43,7 +43,7 @@ const [passwordEmp, setPasswordEmp] = useState("");
 
    
  useEffect(() =>{
-  Axios.post(global.getBack+"posts/getEmployeeDetails", {
+  Axios.post("https://znts-backend.herokuapp.com/posts/getEmployeeDetails", {
     ID: IdFromURL,
     //Password: loginPass,
   })
@@ -70,7 +70,7 @@ const [passwordEmp, setPasswordEmp] = useState("");
       console.log("Update Function Called.");
 
 
-    Axios.post(global.getBack+"posts/updateEmployee", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/updateEmployee", {
     
     EmpId: IdFromURL,
     Name:nameEmp,
@@ -87,7 +87,7 @@ const [passwordEmp, setPasswordEmp] = useState("");
 
         if(Response.data.msg =="Successfully updated") {
             var id=Response.data.msg;
-          window.location.href = global.getFront+`UpdateEmp?id=${id}`
+          window.location.href = `https://znts.herokuapp.com/UpdateEmp?id=${id}`
         }
 
         console.log(Response.data.msg);

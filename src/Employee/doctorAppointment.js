@@ -34,12 +34,12 @@ function CheckNext (props){
 
   useEffect(() => {
 
-    fetch(global.getBack+`get/checkDoctorAppointment?id=${IdFromURL}`)
+    fetch(`https://znts-backend.herokuapp.com/get/checkDoctorAppointment?id=${IdFromURL}`)
     .then(Response => Response.json()) 
     .then(json=> { 
       
       if(json.msg == "No Records") {
-        window.location.href = global.getFront+`NoRecord`;
+        window.location.href = `https://znts.herokuapp.com/NoRecord`;
       }
       else{
      setNameDep(json.Data);
@@ -113,13 +113,13 @@ function CheckNext (props){
 
   function AppFunc(ID) {
 
-    Axios.post(global.getBack+"posts/completeAppointment", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/completeAppointment", {
       AppID: ID
       //Password: loginPass,
     })
       .then((Response) => {
                 if(Response.data.msg =="Appointment deactivate") {
-                    window.location.href = global.getFront+`Emp_doctor`;
+                    window.location.href = `https://znts.herokuapp.com/Emp_doctor`;
                 }
 
       })

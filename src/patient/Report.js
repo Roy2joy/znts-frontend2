@@ -27,7 +27,7 @@ function ReportPage(props){
   const [nameDep, setNameDep] = useState([]);
   useEffect(() => {
 
-    fetch(global.getBack+`get/viewMedicalReport?id=${IdFromURL}`)
+    fetch(`https://znts-backend.herokuapp.com/get/viewMedicalReport?id=${IdFromURL}`)
     .then(Response => Response.json()) 
     .then(json=> { 
      setNameDep(json.Data);
@@ -66,7 +66,7 @@ function ReportPage(props){
               Examined by : {item.ExaminedBy}
               </span>
              
-                <MDBBtn href = {global.getFront+`fullReport?id=${item.RepID}`}>View Report</MDBBtn>
+                <MDBBtn href = {`https://znts.herokuapp.com/fullReport?id=${item.RepID}`}>View Report</MDBBtn>
             </div>
           ))
         }

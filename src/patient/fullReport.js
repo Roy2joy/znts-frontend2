@@ -45,7 +45,7 @@ const [age, setAge] = useState("");
 
  
 
-    Axios.post(global.getBack+"posts/detailReport", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/detailReport", {
         RepID: IdFromURL,
         //Password: loginPass,
       })

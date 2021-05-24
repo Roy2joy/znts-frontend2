@@ -32,7 +32,7 @@ const IdFromURL = params.get('id');
 
   const login = () => {
     console.log('Login function called');
-    Axios.post(global.getBack+"posts/loginAdmin", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/loginAdmin", {
       ID: loginID,
       Password: loginPass,
     })
@@ -42,7 +42,7 @@ const IdFromURL = params.get('id');
           setloginStatus(Response.data.msg);
         }
         if(Response.data.msg == "Password matched") {
-         window.location.href = global.getFront+"UpdateEmp";
+         window.location.href = "https://znts.herokuapp.com/UpdateEmp";
         }
         else {
           setloginStatus(Response.data.msg);

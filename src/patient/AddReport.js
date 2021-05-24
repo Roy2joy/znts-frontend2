@@ -32,7 +32,7 @@ const [adviceReg, setadvice] = useState('');
 
   const Register = () => {
     
-    Axios.post(global.getBack+"posts/updatePatientHistory", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/updatePatientHistory", {
         PatID : pidReg,   
        DocID : didReg,
        Date : dateReg, 
@@ -49,7 +49,7 @@ const [adviceReg, setadvice] = useState('');
 
         var rid;
 
-         window.location.href = global.getFront+`Emp_Doctor?rid=${id}`;
+         window.location.href = `https://znts.herokuapp.com/Emp_Doctor?rid=${id}`;
       //return render(<FormPage />);
 
         }

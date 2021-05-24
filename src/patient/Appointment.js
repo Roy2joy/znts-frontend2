@@ -97,7 +97,7 @@ console.log("Day 3: "+day3);
 useEffect(() => {
 
 
-    Axios.post(global.getBack+"posts/makeAppointment", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/makeAppointment", {
       ID: IdFromURL,
       //Password: loginPass,
     })
@@ -353,7 +353,7 @@ return (
           <MDBInput label="Type your Date" icon="envelope" onChange={(e) => {setSendDate(e.target.value)}}/>
         </div>
         <div className="text-center">
-          <MDBBtn href={global.getFront+`apptime?id=${IdFromURL}&pid=${PIdFromURL}&date=${sendDate}`}>Submit</MDBBtn>
+          <MDBBtn href={`https://znts.herokuapp.com/apptime?id=${IdFromURL}&pid=${PIdFromURL}&date=${sendDate}`}>Submit</MDBBtn>
         </div>
       </form>
         </MDBCardBody>

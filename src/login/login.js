@@ -35,7 +35,7 @@ console.log(IdFromURL);
 
   const login = () => {
     console.log('Login function called');
-    Axios.post(global.getBack+"posts/login", {
+    Axios.post("https://znts-backend.herokuapp.com/posts/login", {
       ID: loginID,
       Password: loginPass,
     })
@@ -45,7 +45,7 @@ console.log(IdFromURL);
           setloginStatus(Response.data.msg);
         }
         if(Response.data.msg == "Password matched") {
-          window.location.href = global.getFront+`Sidenav_login?id=${loginID}`;
+          window.location.href = `https://znts.herokuapp.com/Sidenav_login?id=${loginID}`;
         }
         else {
           setloginStatus(Response.data.msg);
